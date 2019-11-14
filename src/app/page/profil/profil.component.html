@@ -1,0 +1,38 @@
+<section class="profil container-fluid d-flex flex-column justify-content-center">
+
+  <mat-tab-group>
+    <mat-tab label="Mes Coordonnées">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+  <header>
+    <h2 class="text-center m-5">Mon profil</h2>
+  </header>
+    <mat-card  class="mb-5 col-6">
+      <mat-card-title class="text-center mb-3">Informations
+        générales</mat-card-title>
+      <div>
+        <ul>
+          <li><span>Prénom: </span>{{ user.fname }}</li>
+          <li><span>Nom: </span>{{ user.lname }}</li>
+          <li><span>Téléphone :</span>{{ user.phone }}</li>
+          <li><span>Email: </span>{{ user.username }}</li>
+          <li><span>Ville de résidence: </span>{{ user.city }}</li>
+        </ul>
+        <div class="w100 text-center">
+          <button (click)="showModal = !showModal" class="btn btn-outline-danger">
+            Modifier
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+    <app-basic-form class="col-8 mb-5" (newUser)="receiveNewUser($event)" [(visible)]="showModal">
+      <button (click)="showModal = !showModal" class="btn btn-outline-danger basic-close-btn">
+        x
+      </button>
+    </app-basic-form>
+    </mat-tab>
+    <mat-tab label="Mes commandes">
+      <app-commands></app-commands>
+    </mat-tab>
+  </mat-tab-group>
+</section>

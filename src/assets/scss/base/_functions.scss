@@ -1,0 +1,19 @@
+@function color($name: 'dark') {
+ @return map-get($colors, $name)
+};
+
+@function shadow($name: 'small') {
+ @return map-get($shadows, $name)
+};
+
+@function transition($name: 'default') {
+ @return map-get($transitions, $name)
+};
+
+@function textColor($bg, $light: color(white), $dark: color(dark)) {
+  @if (lightness($bg) > 70) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}

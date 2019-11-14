@@ -1,0 +1,37 @@
+.carousel {
+  &.carousel--mobile{
+    white-space: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    padding: 1em 0;
+    width: 100%;
+    
+    & .slides > div {
+      float: none;
+      display: inline-block;
+      white-space: normal;
+    }
+    @media only screen and (min-width: 767px) {
+      display: none
+    }
+  }
+
+  &.carousel--desktop {
+    max-width: 35em;
+    @media only screen and (max-width: 767px) {
+      display: none
+    }
+  }
+
+  & .thumbnails.max {
+    max-height: 35em;
+    overflow-y: scroll;
+  }
+}
+
+.hide-on-desktop {
+  @media only screen and (min-width: 767px) {
+    display: none
+  }
+}

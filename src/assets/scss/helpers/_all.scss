@@ -1,0 +1,372 @@
+// text center
+.tar { text-align: right }
+.tal { text-align: left }
+.taj { text-align: justify }
+.tac { text-align: center }
+
+// vertical align
+.vat { vertical-align: top !important }
+.vam { vertical-align: middle !important }
+.vab { vertical-align: bottom !important }
+
+// float
+.fll { float: left }
+.flr { float: right }
+.fli { float: initial !important}
+
+// width
+.w100 { width: 100% }
+.w50 { width: 50% }
+.w33 { width: 33% }
+.w25 { width: 25% }
+
+.mnw40p { min-width: 40% }
+
+.w1 { width: 1em }
+
+@for $i from 1 through 20 {
+  .w#{$i * 2} { width: #{$i * 2em} }
+  .mxw#{$i * 2} { max-width: #{$i * 2em} }
+  .mnw#{$i * 2} { min-width: #{$i * 2em} }
+}
+
+.mxw100 { max-width: 100vw }
+
+// height
+.h100 { height: 100% }
+.h50 { height: 50% }
+.h25 { height: 25% }
+
+.mnh100vh { min-height: 100vh }
+
+@for $i from 1 through 16 {
+  .h#{$i * 2} { height: #{$i * 2em} }
+  .mxh#{$i * 2} { max-height: #{$i * 2em} }
+  .mnh#{$i * 2} { min-height: #{$i * 2em} }
+}
+
+//filter
+.ftr-blr-1 { filter: blur(2px) }
+.ftr-blr-2 { filter: blur(4px) }
+.ftr-blr-3 { filter: blur(8px) }
+.ftr-blr-4 { filter: blur(16px) }
+
+// display
+.db { display: block }
+.dib { display: inline-block }
+
+// position
+.poss { position: static }
+.posr { position: relative }
+.posa { position: absolute }
+
+// font size
+.fzxs { font-size: 0.6em; letter-spacing: 0.1em }
+.fzs { font-size: 0.8em; letter-spacing: 0.03em }
+.fzm { font-size: 1em }
+.fzl { font-size: 1.2em }
+.fzxl { font-size: 1.4em }
+.fzxxl { font-size: 2em }
+
+// font weight
+.fwl { font-weight: lighter }
+.fwn { font-weight: normal }
+.fwb { font-weight: bold }
+.fwbr { font-weight: bolder }
+
+// white space
+.wsnw { white-space: nowrap }
+.tove { text-overflow: ellipsis }
+
+// overflow
+.oh { overflow: hidden }
+.oa { overflow: auto }
+.ov { overflow: visible }
+
+// font transform
+.tdu { text-decoration: underline }
+.flu:first-letter { text-transform: uppercase }
+.ttu { text-transform: uppercase }
+.ttl { text-transform: lowercase }
+
+// spacing
+
+// auto margin
+.ma { margin: auto !important}
+.mta { margin-top: auto !important}
+.mla { margin-left: auto !important}
+.mba { margin-bottom: auto !important}
+.mra { margin-right: auto !important}
+// reset margin
+.m0 { margin: 0 !important}
+.mt0 { margin-top: 0 !important}
+.ml0 { margin-left: 0 !important}
+.mb0 { margin-bottom: 0 !important}
+.mr0 { margin-right: 0 !important}
+.mx0 {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.my0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+// reset padding
+.p0 { padding: 0 !important}
+.pt0 { padding-top: 0 !important}
+.pl0 { padding-left: 0 !important}
+.pb0 { padding-bottom: 0 !important}
+.pr0 { padding-right: 0 !important}
+.px0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.py0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@for $i from 1 through 4 {
+    // margin
+    .m#{$i * 5} { margin: #{$i * 0.5em} !important }
+    .mt#{$i * 5} { margin-top: #{$i * 0.5em} !important }
+    .ml#{$i * 5} { margin-left: #{$i * 0.5em} !important }
+    .mb#{$i * 5} { margin-bottom: #{$i * 0.5em} !important }
+    .mr#{$i * 5} { margin-right: #{$i * 0.5em} !important }
+    .my#{$i * 5} {
+      margin-top: #{$i * 0.5em} !important;
+      margin-bottom: #{$i * 0.5em} !important }
+    .mx#{$i * 5} {
+      margin-right: #{$i * 0.5em} !important;
+      margin-left: #{$i * 0.5em} !important }
+
+    // margin
+    .-m#{$i * 5} { margin: #{$i * -0.5em} !important }
+    .-mt#{$i * 5} { margin-top: #{$i * -0.5em} !important }
+    .-ml#{$i * 5} { margin-left: #{$i * -0.5em} !important }
+    .-mb#{$i * 5} { margin-bottom: #{$i * -0.5em} !important }
+    .-mr#{$i * 5} { margin-right: #{$i * -0.5em} !important }
+
+    // padding
+    .p#{$i * 5} { padding: #{$i * 0.5em} !important }
+    .pt#{$i * 5} { padding-top: #{$i * 0.5em} !important }
+    .pl#{$i * 5} { padding-left: #{$i * 0.5em} !important }
+    .pb#{$i * 5} { padding-bottom: #{$i * 0.5em} !important }
+    .pr#{$i * 5} { padding-right: #{$i * 0.5em} !important }
+    .py#{$i * 5} {
+      padding-top: #{$i * 0.5em} !important;
+      padding-bottom: #{$i * 0.5em} !important }
+    .px#{$i * 5} {
+      padding-right: #{$i * 0.5em} !important;
+      padding-left: #{$i * 0.5em} !important }
+  }
+
+// z-index
+@for $i from 0 through 10 {
+  .z#{$i * 10} { z-index: #{$i * 10} }
+}
+
+// colors
+@each $name, $color in $colors {
+  .txt-#{$name} { color: $color }
+  .bg-#{$name} { background-color: $color }
+  .br-#{$name} { border-color: $color }
+  .is-#{$name} {
+    background-color: $color;
+    color: textColor($color);
+    
+    &[disabled] {
+      background-color: mix(color(gray), $color, 50%);
+      color: textColor(mix(color(gray), $color, 50%));
+    }
+
+    &.is-active {
+      background-color: textColor($color);
+      color: $color;
+    }
+  }
+}
+
+.bg-none { background: none !important }
+
+// disabled
+.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// gradient
+.grad-primary {
+  @include gradient(right bottom, color(primary), color(success))
+}
+
+.grad-success {
+  @include gradient(right bottom, color(success), darken(color(success), 10%))
+}
+
+.grad-warning {
+  @include gradient(right bottom, color(warning), darken(color(warning), 10%))
+}
+
+.grad-danger {
+  @include gradient(right bottom, color(danger), darken(color(danger), 10%))
+}
+
+// hidden
+
+.hidden { display: none !important }
+.visible { display: initial !important }
+
+@include mq (mobile) {
+  .hidden--mobile { display: none !important }
+  .visible--mobile { display: initial !important }
+}
+
+@include mq (tablet) {
+  .hidden--tablet { display: none !important }
+  .visible--tablet { display: initial !important }
+}
+
+@include mq (desktop) {
+  .hidden--desktop { display: none !important }
+  .visible--desktop { display: initial !important }
+}
+
+@include mq (wide) {
+  .hidden--wide { display: none !important }
+  .visible--wide { display: initial !important }
+}
+
+@include mq (hd) {
+  .hidden--hd { display: none !important }
+  .visible--hd { display: initial !important }
+}
+
+// border-radius {
+  .rad0 { border-radius: 0 }
+  .rad { border-radius: 0.2em }
+  .rad2 { border-radius: 2em }
+  .rad100 { border-radius: 100% }
+
+
+// loading
+.is-loading {
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: fade-out(color(dark), 0.6);
+  }
+
+  &.button:before {
+    background-color: inherit;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1020;
+    display: block;
+    top: 50%;
+    left: 50%;
+    font-size: 1em;
+    line-height: 0;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    text-indent: 0;
+    background-color: white;
+    box-shadow: 0 0 1em fade-out(black, 0.6);
+    transform: translateX(-50%) translateY(-50%);
+    animation: loading infinite 3s;
+  }
+}
+
+// shadow
+.shadowxs{
+  box-shadow: shadow(xsmall);
+}
+.shadows{
+  box-shadow: shadow(small);
+}
+.shadow{
+  box-shadow: shadow(medium);
+}
+.shadowl{
+  box-shadow: shadow(large);
+}
+
+// absolute center
+.posacenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%)  translateX(-50%);
+}
+
+// absolute vertical center
+.posava{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.posaha{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@for $i from 0 through 10 {
+  .right#{$i} { right: #{$i * 0.5em} }
+  .top#{$i} { top: #{$i * 0.5em} }
+  .left#{$i} { left: #{$i * 0.5em} }
+  .bottom#{$i} { bottom: #{$i * 0.5em} }
+}
+
+// line height
+@for $i from 1 through 10 {
+  .lh#{$i} { line-height: #{$i * 0.5em} }
+}
+
+.invisible{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.no-border{
+  border : none !important;
+}
+
+.border{
+  border : 1px solid transparent;
+}
+
+.bdb{
+  border-bottom : 1px solid transparent;
+}
+.bdt{
+  border-top : 1px solid transparent;
+}
+.bdl{
+  border-left : 1px solid transparent;
+}
+.bdr{
+  border-right : 1px solid transparent;
+}

@@ -1,0 +1,33 @@
+.input {
+  font-size: 1em;
+  color: color(black);
+  background: color(white);
+  border: 1px solid color(gray);
+  border-radius: 0.2em;
+  padding: 0.5em 1em;
+  display: inline-block;
+  outline: none;
+
+  &:focus {
+    border-color: color(primary);
+  }
+}
+
+select.input {
+  height: 2.375em;
+}
+
+.radio,
+.checkbox {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    opacity: 0;
+  }
+}

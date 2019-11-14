@@ -1,0 +1,21 @@
+.number {
+  position: relative;
+  display: inline-block;
+}
+
+.number > .button {
+  position: absolute;
+  top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 2.5em;
+
+  &:first-child { left: 0 }
+  &:last-child { right: 0 }
+}
+
+.number > .input {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  width: calc(100% - 5em);
+}

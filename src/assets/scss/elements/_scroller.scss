@@ -1,0 +1,43 @@
+.scroller {
+  white-space: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  padding: 1em 0;
+  width: 100%;
+  
+  & > .grid > div,
+  .container > .grid > div {
+    float: none;
+    display: inline-block;
+    white-space: normal;
+  }
+  
+  @include mq(desktop) {
+    white-space: normal;
+    overflow: visible;
+
+    & > .grid > div,
+    .container > .grid > div {
+      float: left;
+      display: inline-block;
+      white-space: normal;
+      min-width: auto;
+
+      &:nth-child(3) ~ div {
+        display: none;
+      }
+    }
+  }
+
+  @include mq(wide) {
+    & > .grid > div,
+    .container > .grid > div {
+      display: inline-block !important;
+
+      &:nth-child(4) ~ div {
+        display: none !important;
+      }
+    }
+  }
+}

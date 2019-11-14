@@ -1,0 +1,9 @@
+<mat-card *ngIf="(!CookieValue) && showCookie" class="cookie" fxLayout="column">
+  <p>Notre site utilise des cookies pour personnaliser et améliorer votre confort d'utilisation.</p>
+  <p>En utilisant notre site, vous acceptez l'usage des cookies et
+    <span routerLink="/politique" class="politik">notre politique de confidentialité</span>.</p>
+  <mat-card-actions fxLayout=" row " fxLayoutAlign="center">
+    <button mat-button (click)="setCookie()" fxFill>Accepter</button>
+  </mat-card-actions>
+
+</mat-card>

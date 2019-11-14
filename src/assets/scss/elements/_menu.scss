@@ -1,0 +1,75 @@
+.menu {
+  background-color: color(white);
+  color: color(dark);
+
+  ul {
+    list-style: none;
+    display: block;
+    padding: 1em;
+    margin: 0;
+  }
+
+  ul > li >  ul {
+    padding: 0 0 0 0.5em;
+    margin: 0 0 0 1.5em;
+    border-left: 1px dashed fade-out(color(black), 0.5);
+    visibility: hidden;
+    max-height: 0;
+    transition: transition(smooth);
+    overflow: hidden;
+  }
+
+  ul > li.active > ul,
+  ul > li:hover > ul,
+  ul > li > a.active ~ ul,
+  ul > li > a:active ~ ul,
+  ul > li > a:focus ~ ul,
+  ul > li > a:hover ~ ul {
+    visibility: visible;
+    max-height: 100vh;
+  }
+
+  ul li {
+    display: inline-block;
+    width: 100%;
+  }
+
+  li > a,
+  li > span,
+  li > button {
+    padding: 1em;
+    display: inline-block;
+    width: 100%;
+    transition: transition();
+
+    i {
+      width: 1em;
+      text-align: center;
+      display: inline-block;
+
+      &:first-child { margin-right: 1em }
+      &:last-child { margin-left: 1em }
+    }
+  }
+
+  li > a,
+  li > button {
+    &:hover {
+      background-color: fade-out(color(black), 0.9);
+    }
+
+    &.is-active {
+      color: color(info)
+    }
+  }
+
+  li > .button {
+    border-radius: 0;
+  }
+
+  li.divider {
+    height: 1px;
+    display: block;
+    background-color: color(light);
+  }
+}

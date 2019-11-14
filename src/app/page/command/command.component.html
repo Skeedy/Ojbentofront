@@ -1,0 +1,9 @@
+<ul *ngIf="!loading" >
+
+    <li *ngFor="let command of commands">{{ command.id }}
+        <div *ngFor="let assoc of command.commandassocs">
+            {{ assoc.quantity }}
+        </div>
+    </li>
+
+</ul>

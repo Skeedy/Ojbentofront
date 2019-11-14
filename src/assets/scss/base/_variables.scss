@@ -1,0 +1,62 @@
+// breakpoint 
+$breakpoints: (
+  mobile: 480px,
+  tablet: 769px,
+  desktop: 1024px,
+  wide: 1216px,
+  hd: 1408px,
+  );
+
+// shadows
+$shadows: (
+  none: 0 0em 0em fade-out(black, 1),
+  xsmall: 0 0 0.1em fade-out(black, 0.9),
+  small: 0 0.1em 0.2em fade-out(black, 0.9),
+  medium: 0 0.2em 0.4em fade-out(black, 0.9),
+  large: 0 0.4em 0.8em fade-out(black, 0.9),
+  );
+
+// shadows
+$transitions: (
+  none: 0s,
+  default: 0.3s ease,
+  smooth: 0.6s ease,
+  );
+
+// theme colors
+$colors: (
+  
+  red: #CF1514,
+  red-2: #CC1A34,
+  red-3: #E04D44,
+  green: #79C701,
+  blue: #0E50A3,
+  blue-2: #82CEF2,
+  blue-3: #5597C7,
+  yellow: #F4CA03,
+
+  transparent: transparent,
+  white: #ffffff,
+  light: #f3f3f3,
+  gray: #dddddd,
+  graydark: #888888,
+  dark: #444444,
+  black: #222222,
+
+  primary: #284CAA,
+  secondary: #6CBCAE,
+
+  info: #284CAA,
+  success: #6CBCAE,
+  warning: #F3B814,
+  danger: #C62642,
+
+  pink: #E2A7C3
+  );
+
+// app
+$app-navbar-height: 3em;
+$app-navbar-height-desktop: 4em;
+$app-navbar-height-wide: 5em;
+
+$app-panel-width: 16em;

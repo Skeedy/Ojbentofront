@@ -1,0 +1,122 @@
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  perspective: 400px;
+  transition: opacity 0.3s ease
+}
+
+.modal-body {
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  max-width: 32em;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 100vh;
+  overflow: auto;
+  padding: 2em 1em;
+  animation: modalFadeIn 0.3s 1 ease-out;
+  animation-fill-mode: forwards;
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 20;
+  top: 1em;
+  right: 1em;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 2em;
+  cursor: pointer;
+  color: color(dark);
+  background-color: color(white);
+  transition: transition();
+  box-shadow: shadow();
+
+  &:hover {
+    color: color(danger);
+    transform: scale(1.1); 
+  }
+}
+
+.modal-overlaye {
+  position: absolute;
+  touch-action: none;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: fade-out(color(black), 0.8);
+}
+
+.modal--full {
+  .modal-body {
+    position: absolute;
+    top: 0;
+    transform: none;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    padding: 0;
+    animation: modalFullFadeInMobile 0.3s 1 ease;
+    transition: 0.2s ease;
+    box-shadow: 0 0.5em 4em fade-out(color(black), 0.8);
+
+    > .card {
+      min-height: 100%;
+    }
+
+    @include mq (tablet) {
+      animation: modalFullFadeIn 0.3s 1 cubic-bezier(0.7, -0.5, 0.3, 1.5);
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      min-width: 40vw;
+      width: 100vw;
+      max-width: 40em;
+      min-height: 20vh;
+      height: auto;
+      max-height: calc(100vh - 2em)
+    }
+  }
+
+  &.modal--close {
+    opacity: 0;
+
+    .modal-body {
+      transform: translateY(3em) translateZ(-3em);
+      opacity: 0;
+
+      @include mq (tablet) {
+        transform: translateX(-50%) translateY(-40%) translateZ(-3em);
+      }
+    }
+  }
+}
+
+.modal--popup-cart {
+  .modal-body {
+    max-width: 70em;
+  }
+}
+
+.modal--with-dropdown {
+  .modal-body {
+    overflow: initial;
+    max-width: 70em;
+  }
+}

@@ -1,0 +1,56 @@
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+
+    &:before {
+        background-color: #eee;
+    bottom: 0;
+    content: " ";
+    left: 1.3em;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    width: 0.2em;
+    }
+
+    > li {
+
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .timeline-badge {
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.4em;
+            height: 2em;
+            left: 2em;
+            line-height: 2em;
+            margin-left: -2em;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            width: 2em;
+            z-index: 2;
+            margin-top: -1em;
+        }
+    }
+}
+
+.timeline-body {
+    > p,
+    > ul {
+        margin-bottom: 0;
+    }
+
+    > p + p {
+        margin-top: 5px;
+    }
+}

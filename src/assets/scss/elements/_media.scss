@@ -1,0 +1,23 @@
+.media {
+  position: relative;
+  padding-left: 3.5em;
+  min-height: 3em;
+  line-height: 3em;
+}
+
+.media-left {
+  width: 3em;
+  position: absolute;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.media-right {
+  line-height: 1em;
+  display: inline-block;
+  vertical-align: top;
+}

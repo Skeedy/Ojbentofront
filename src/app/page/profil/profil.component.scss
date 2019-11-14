@@ -1,0 +1,17 @@
+.profil mat-card-title {
+  color: red;
+}
+
+.profil ul {
+  list-style-type: none;
+}
+
+.profil li span {
+  font-weight: bold;
+}
+
+.profil li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+

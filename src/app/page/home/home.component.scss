@@ -1,0 +1,58 @@
+
+.home-wrapper {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.home-headband {
+  width: 100%;
+  min-height: 200px;
+  background: url("../../../assets/img/japan.jpg") center / cover  no-repeat;
+  margin-bottom: 50px;
+}
+
+.home header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.home h3, h2 {
+  text-align: center;
+  color: #707070;
+  font-weight: bold;
+}
+
+.home h2 {
+  font-size: 35px;
+}
+
+.home p {
+  margin-top: 35px;
+}
+
+.home hr {
+  border: 1px solid red;
+  transform: translateX(-30px);
+  width: 100px;
+  margin: 0;
+}
+
+.home {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 50px 0;
+
+  &-section {
+
+  }
+
+  &-section:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+

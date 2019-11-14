@@ -1,0 +1,16 @@
+.table {
+
+  td {
+    border-top: 1px solid fade-out(color(black), 0.8);
+  }
+
+  th, td {
+    padding: 0.5em;
+  }
+
+  &.table--striped {
+    tr:nth-child(even) td {
+      background-color: fade-out(color(black), 0.95);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.ui_input{
+  position: relative;
+}
+
+.ui_input--icon > input {
+  padding-left: 2em
+}
+
+.ui_input-status {
+  position: absolute;
+  top: 0.6em;
+  right: 0.8em;
+}
+
+.ui_input-icon {
+  position: absolute;
+  top: 50%;
+  font-size: 1em;
+  width: 2rem;
+  text-align: center;
+  transform: translateY(-50%);
+  left: 0;
+}

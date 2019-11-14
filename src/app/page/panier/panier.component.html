@@ -1,0 +1,80 @@
+<header>
+  <h2 class="text-center mt-3 mb-3">Ma commande</h2>
+</header>
+<div class="container panier">
+  <div class="grid">
+    <div class="item-1"></div>
+    <div class="item-2">Quantité</div>
+    <div class="item-3">Produits</div>
+    <div class="item-4"></div>
+    <div class="item-5"></div>
+    <div class="item-6">Prix unitaire</div>
+    <div class="item-7">Prix total</div>
+    <div class="item-8"></div>
+
+  </div>
+  <app-cart-row *ngFor="let row of rows" [cartRow]="row"></app-cart-row>
+
+  <div class="grid">
+    <div class="item-7">
+      <strong>
+        Total:
+        {{ cartServ.cart.getPrice() | currency:'EUR':' ':'1.2-2'}} €
+      </strong>
+    </div>
+  </div>
+  <div *ngIf="commandCheck" class="text-danger text-center w-100">
+    Vous avez déjà une commande en cours de validation. Veuillez patienter que votre commande soit traitée pour recommander de nouveau
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-6 d-flex flex-column align-items-end">
+      <label class="mr-3">Pour quel moment ?</label>
+      <mat-radio-group
+
+              aria-label="Pour quel moment ?"
+              [(ngModel)]="moment"
+              (change)="switchTime()">
+        <mat-radio-button class="m-3" value="midi">Midi</mat-radio-button>
+        <mat-radio-button class="m-3" value="soir">Soirée</mat-radio-button>
+      </mat-radio-group>
+      <form class="form-content" [formGroup]="hourForm">
+
+        <mat-form-field *ngIf="moment">
+          <mat-label>Horaire</mat-label>
+
+          <mat-select formControlName="horaire" [(ngModel)]="hour" required>
+            <mat-option *ngFor="let time of timeSelected"
+                        [value]="time">
+              {{time.hourCommand}}
+            </mat-option>
+
+          </mat-select>
+          <mat-error *ngIf="selectFormControl.hasError('required')">
+            Ce champ est requis
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+    </div>
+    <div class="col-6">
+      <mat-spinner *ngIf="loading" [diameter]="20"></mat-spinner>
+          <button class=""
+                  type="button" mdbBtn color="success"
+                  mdbWavesEffect
+                  (click)="commander()"
+                  [disabled]="hourForm.invalid || !isConnected() || commandCheck || checkMenuMidi() || loading">
+            Commander
+          </button>
+      <div *ngIf="checkMenuMidi()" class="text-danger"> Vous ne pouvez commander de formule du midi le soir </div>
+    </div>
+
+  </div>
+
+
+
+
+
+

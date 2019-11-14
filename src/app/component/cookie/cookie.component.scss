@@ -1,0 +1,24 @@
+.cookie{
+  z-index: 1000;
+  right: 30px;
+  color: #707070;
+  position: fixed;
+  bottom: 30px;
+  width: 40%;
+  border-top-color: #cc0000;
+  border-top-style: solid;
+  border-top-width: thick;
+}
+
+mat-card-actions{
+  border-top-style: outset;
+}
+button{
+  color: #cc0000;
+}
+.politik{
+  text-decoration: underline;
+  cursor: pointer;
+  color: #cc0000;
+  font-weight: bold;
+}

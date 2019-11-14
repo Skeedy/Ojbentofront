@@ -1,0 +1,51 @@
+.message {
+  padding: 1em;
+  position: relative;
+  background-color: color(white);
+  color: color(dark);
+}
+
+.message-close {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: 1.2em;
+  line-height: 1;
+  padding: 0.2em;
+  cursor: pointer;
+}
+
+// messages
+
+.messages {
+  position: fixed;
+  z-index: 200;
+  top: 1em;
+  left: 1em;
+  max-width: calc(100vw - 2em);
+  width: 20em;
+
+  .message {
+    margin-bottom: 0.25em;
+  }
+}
+
+.messages--center {
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.messages--right {
+  left: auto;
+  right: 1em;
+}
+
+.messages--bottom {
+  top: auto;
+  bottom: 1em;
+}

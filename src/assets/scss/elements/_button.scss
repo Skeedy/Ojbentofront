@@ -1,0 +1,59 @@
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-align: center;
+  background-color: transparent;
+  color: color(primary);
+  box-shadow: shadow(none);
+  outline: none;
+  border-radius: 0.2em;
+  text-decoration: none !important;
+  font-size: 1em;
+  border: 1px solid transparent;
+  transition-property: background, color, box-shadow;
+  transition: 0.3s ease;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: shadow(small)
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: color(gray);
+  }
+}
+
+a.button,
+button.button {
+  cursor: pointer;
+}
+
+.button--square {
+  height: 2.6em;
+  width: 2.6em;
+  line-height: 2.6em;
+  padding: 0;
+}
+
+// colors
+@each $name, $color in $colors {
+  .button.bg-#{$name}:hover,
+  .button.bg-#{$name}:focus,
+  .button.bg-#{$name}:active {
+    background: darken($color, 10%)
+  }
+
+  .button.br-#{$name}:hover,
+  .button.br-#{$name}:focus,
+  .button.br-#{$name}:active {
+    border-color: darken($color, 10%)
+  }
+
+  .button.bg-#{$name}:hover[disabled],
+  .button.bg-#{$name}:focus[disabled],
+  .button.bg-#{$name}:active[disabled] {
+    background: lighten($color, 10%)
+  }
+}

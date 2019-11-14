@@ -1,0 +1,94 @@
+a {
+  color: white;
+}
+
+.tool-bar{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.remaining-space{
+  flex: 1 1 auto;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.headband {
+  height: 20vh;
+  background: url("../assets/img/headband.jpg") center / cover fixed no-repeat;
+}
+
+mat-toolbar {
+  background-color: #EE1B22;
+}
+
+.menu-text {
+  width: 100%;
+  text-align: center;
+}
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+
+mat-sidenav{
+  background: #242323;
+  width: 300px;
+}
+
+mat-nav-list ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }
+
+mat-nav-list li {
+  display: flex;
+  justify-content: center;
+}
+
+nav mat-nav-list a.active{
+  color: red;
+}
+
+mat-icon {
+  color: white;
+}
+
+.phone-icon {
+  color: red;
+}
+
+.ojbento {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+
+  &__adresse {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+.infos__co {
+  margin-right: 5px;
+  font-size: 18px;
+  color: #ffffff;
+}
+.case{
+
+}
+

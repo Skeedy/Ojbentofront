@@ -1,0 +1,10 @@
+
+<div class="container">
+  <header>
+    <h1 class="text-center m-3">Menus</h1>
+  </header>
+
+  <app-menu-card *ngFor="let menu of menus | noMidiMenu"  [menu]="menu" class="example-card m-5"></app-menu-card>
+  <h1 class="text-center m-5">Formule du Midi</h1>
+  <app-menu-card *ngFor="let menu of menus | midiMenu"  [menu]="menu" class="example-card m-5"></app-menu-card>
+</div>

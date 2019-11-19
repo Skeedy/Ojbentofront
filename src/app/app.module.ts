@@ -41,6 +41,7 @@ import { PolitiqueComponent } from './page/politique/politique.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MidiMenuPipe } from './pipe/midi-menu.pipe';
 import { NoMidiMenuPipe } from './pipe/no-midi-menu.pipe';
+import { ArticleComponent } from './page/article/article.component';
 
 const appRoutes: Routes = [
     { path: 'product', component: ProductComponent, data : { title: 'Produits'} },
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
               ' confidentialité'} },
     { path: 'profil', component: ProfilComponent, data : { title: 'Profil'} },
     { path: 'home', component: HomeComponent, data : { title: 'Page d\'acceuil'} },
+    { path: 'article', component: ArticleComponent, data : { title: 'Articles'} },
     { path: 'menu', component: MenuComponent, data : { title: 'Menu'} },
     { path: 'type', component: TypeComponent, data : { title: 'Type'} },
     { path: 'command',  component: CommandComponent, canActivate: [IsSignedInGuard], data : { title: 'Commande envoyée'} },
@@ -85,7 +87,8 @@ const appRoutes: Routes = [
         PolitiqueComponent,
         FooterComponent,
         MidiMenuPipe,
-        NoMidiMenuPipe
+        NoMidiMenuPipe,
+        ArticleComponent
     ],
     imports: [
         MDBBootstrapModule,

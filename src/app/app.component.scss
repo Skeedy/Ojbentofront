@@ -22,7 +22,9 @@ a {
   height: 20vh;
   background: url("../assets/img/headband.jpg") center / cover fixed no-repeat;
 }
-
+.test-font{
+  font-family: 'permanent';
+}
 mat-toolbar {
   background-color: #EE1B22;
 }
@@ -88,7 +90,12 @@ mat-icon {
   font-size: 18px;
   color: #ffffff;
 }
-.case{
-
+.side{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
 }
-
+.font{
+  font-family: 'permanent';
+}

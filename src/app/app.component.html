@@ -1,6 +1,8 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav [opened]="screenWidth > 900" [mode]="(screenWidth > 900) ?
     'side':'over'">
+      <div class="side">
+        <div>
         <figure class="d-flex justify-content-center m-3">
             <img src="../assets/img/logo.jpg">
         </figure>
@@ -23,13 +25,13 @@
             <nav>
                 <mat-nav-list>
                     <ul>
-                        <li class="mb-3">
-                            <a routerLink="/menu">Menus</a>
+                        <li class="mb-3 font">
+                            <a routerLink="/menu" (click)="(screenWidth > 900) ? '' : sidenav.toggle()">Menus</a>
                         </li>
                     </ul>
                     <ul *ngFor="let type of types">
-                        <li>
-                            <a class="pb-3" routerLink="/product/" fragment="{{ type.name }}">
+                        <li class="font">
+                            <a class="pb-3" routerLink="/product/" fragment="{{ type.name }}" (click)="(screenWidth > 900) ? '' : sidenav.toggle()">
                                 {{type.name}}
                             </a>
                         </li>
@@ -37,42 +39,42 @@
                 </mat-nav-list>
             </nav>
         </div>
+        </div>
+      <app-footer></app-footer>
+      </div>
     </mat-sidenav>
     <mat-sidenav-content mode="side">
         <div class="headband"></div>
         <mat-toolbar class="tool-bar">
-            <span>
-                <a routerLink="/home" routerLinkActive="active" mat-list-item>Présentation</a>
-            </span>
-            <span *ngIf="isConnected()" class="pl-3">
-                <a routerLink="/profil" routerLinkActive="active" mat-list-item>Profil
-                </a>
-            </span>
+<!--            <span *ngIf="isConnected()" class="pl-3">-->
+<!--                <a routerLink="/profil" routerLinkActive="active" mat-list-item>Profil-->
+<!--                </a>-->
+<!--            </span>-->
             <span *ngIf="screenWidth < 900">
                 <button  type="button" mat-button (click)="sidenav.toggle()">
                     <mat-icon>view_headline</mat-icon>
                 </button>
             </span>
-            <span class="remaining-space"></span>
-            <span *ngIf="!isConnected()">
-                <button mat-button [routerLink]="['/login']">
-                    <mat-icon class="material-icons-outlined">account_box</mat-icon>
-                    <span class="infos__co">Connexion</span>
-                </button>
-            </span>
-                <button class="infos__co" mat-button [matMenuTriggerFor]="menu"
-                        [routerLink]="['/panier']">
-                    <mat-icon>shopping_cart</mat-icon>
-                    Panier {{ cart.getTotalQuantity() }} - {{ cart.getPrice()| currency:'EUR':' ':'1.2-2'}} €
-                </button>
-                <mat-menu #menu="matMenu">
+<!--            <span class="remaining-space"></span>-->
+<!--            <span *ngIf="!isConnected()">-->
+<!--                <button mat-button [routerLink]="['/login']">-->
+<!--                    <mat-icon class="material-icons-outlined">account_box</mat-icon>-->
+<!--                    <span class="infos__co">Connexion</span>-->
+<!--                </button>-->
+<!--            </span>-->
+<!--                <button class="infos__co" mat-button [matMenuTriggerFor]="menu"-->
+<!--                        [routerLink]="['/panier']">-->
+<!--                    <mat-icon>shopping_cart</mat-icon>-->
+<!--                    Panier {{ cart.getTotalQuantity() }} - {{ cart.getPrice()| currency:'EUR':' ':'1.2-2'}} €-->
+<!--                </button>-->
+<!--                <mat-menu #menu="matMenu">-->
 
-                </mat-menu>
+<!--                </mat-menu>-->
         </mat-toolbar>
         <div style="position: relative; width: 100%; height: 100%;">
             <app-cookie></app-cookie>
             <router-outlet></router-outlet>
-            <app-footer></app-footer>
+
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

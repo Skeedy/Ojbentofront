@@ -7,7 +7,9 @@
 .dialog figure {
   margin: 0;
 }
-
+.font{
+  font-family: 'permanent';
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -19,15 +21,11 @@
 }
 
 .dialog {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
   z-index: 1000;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 500px;
   width: 90%;
   max-width: 900px;
   background-color: #fff;
@@ -37,7 +35,7 @@
     display: flex;
 
     & > div {
-      width: 50%;
+      width: 100%;
     }
 
     & > div:not(:last-child) {
@@ -46,8 +44,6 @@
   }
 
   &-headband {
-    position: fixed;
-    top: 0;
     height: 50px;
     background-color: #cc0000;
     width: 100%;

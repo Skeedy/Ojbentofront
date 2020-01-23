@@ -1,5 +1,6 @@
 import {Assoc} from './assoc';
 import {Price} from './price';
+import {Image} from './image';
 
 export class Menu {
     id: number;
@@ -8,4 +9,5 @@ export class Menu {
     prices: Price[];
     isMidi: boolean;
     price: string;
+    image: Image;
 }

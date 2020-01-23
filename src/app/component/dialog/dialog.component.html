@@ -1,42 +1,42 @@
 <div [@dialog] [@allergens] *ngIf="visible" class="dialog">
   <div class="dialog-headband"></div>
-  <div class="dialog-container ml-3">
-    <div>
-      <h3 style="height: 15%;" class="text-center p-3">{{ assoc.type.name }}
-        {{ assoc.product.name }} |
-        <span>{{ assoc.quantity }} {{ assoc.price }} </span>
-      </h3>
-      <div class="dialog-picture mb-3" style="height: 70%">
-        <figure>
-          <img src="{{ assoc.image?.imgpath |imgpath }}" alt="logo de produits japonais"
-               style="width: 100px; height: 100px;">
-        </figure>
+  <div class="dialog-container container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h3 class="text-center pt-3 font"> {{ assoc.quantity }} {{ assoc.type.name }}
+          {{ assoc.product.name }} <span class="font" *ngIf="screenWidth < 900">{{ getPrice(assoc, 'Standard') }} €</span>
+        </h3>
+
+        <div class="dialog-picture mb-3">
+          <figure>
+            <img src="{{ assoc.image?.imgpath |imgpath }}" alt="{{ assoc.image?.alt}}"
+                 style="width: auto; height: auto;">
+          </figure>
+        </div>
+        <div class="dialog-allergens m-3">
+          <h3 class="text-center font">Allergènes</h3>
+          <figure class="text-center">
+            <img *ngFor="let allergen of assoc.allergens"
+                 src="{{ allergen.image.imgpath |imgpath }}"
+                 alt="{{ allergen.image.alt}}"
+                 style="width: 50px; height: 50px;">
+          </figure>
+        </div>
       </div>
-      <div class="dialog-allergens" style="height: 15%;">
-        <p>Allergènes</p>
-        <figure>
-          <img *ngFor="let allergen of assoc.allergens"
-               src="{{ allergen.image.imgpath |imgpath }}"
-               alt="logo de produits japonais"
-               style="width: 50px; height: 50px;">
-        </figure>
-      </div>
-    </div>
-    <div>
+    <div class="col-12 col-lg-6">
+      <h3 class="pt-3 text-center font" *ngIf="screenWidth > 900">{{ getPrice(assoc, 'Standard') }} €</h3>
       <div>
-        <h3 class="text-center p-3">Composition</h3>
-      </div>
-      <div style="height: 50%;">
-        <ul class="dialog-list">
-          <li>{{ assoc.composition }}</li>
-        </ul>
-      </div>
-      <div style="height: 50%;">
-        <p class="mr-3  text-center">
+        <h3 class="text-center font">Description</h3>
+        <p class="text-center">
           {{ assoc.description }}
         </p>
       </div>
+      <div>
+        <h3 class="text-center font">Composition</h3>
+        <p class="text-center">{{ assoc.composition }}</p>
+      </div>
     </div>
+  </div>
   </div>
   <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
 </div>

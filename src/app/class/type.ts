@@ -8,5 +8,6 @@ export class Type {
     name: string;
     assocs: Assoc;
     image: Image;
+    label: string;
     prices: Price;
 }

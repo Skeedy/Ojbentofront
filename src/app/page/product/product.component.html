@@ -1,15 +1,14 @@
-<div class="row flex-column m-0">
+
   <div class="d-flex flex-column justify-content-start" *ngFor="let type of assocByTypes" id="{{ type.name }}">
     <div class="product-type padding-subname">
       <h2  class="pr-2 test-font  text-center">{{ type.name }}</h2>
       <div *ngIf="type.label"> ({{ type.label}})</div>
     </div>
     <div class="container-fluid">
-      <div class="row">
-        <div *ngFor="let assoc of type.assocs | noMenu " class="col-6 col-lg-3 mb-1">
+      <div class="row mt-3 mb-3">
+        <div *ngFor="let assoc of type.assocs | noMenu " class="col-6 col-lg-2 mb-1">
             <app-product-card [type]="type" [assoc]="assoc" ></app-product-card>
         </div>
       </div>
     </div>
   </div>
-</div>
